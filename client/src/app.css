@@ -88,13 +88,18 @@ body {
     margin-top: 10px;
     color: rgb(177, 7, 7);
     border-radius: 8px;
-    background-color:rgba(177, 7, 7, 0.233) ;
+    background-color: rgba(177, 7, 7, 0.233);
 }
-.delete-btn{
+
+.delete-btn {
     background-color: sienna;
     color: white;
     cursor: pointer;
     padding: 10px;
     float: right;
     border-radius: 6px;
+}
+
+input.error {
+    border: 1px solid rgb(177, 7, 7);
 }
