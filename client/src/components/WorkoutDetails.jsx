@@ -1,13 +1,23 @@
 import React from "react";
 import { UseWorkoutContext } from "../hooks/useWorkoutContext";
+import { UseAuthContext } from "../hooks/useAuthContext";
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = UseWorkoutContext();
+  const { user } = UseAuthContext();
+
   const handleClick = async () => {
+    if (!user) {
+      return;
+    }
     const response = await fetch("/api/workouts/" + workout._id, {
       method: "DELETE",
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      },
     });
     const json = await response.json();
+
     if (response.ok) {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
     }
@@ -26,7 +36,9 @@ const WorkoutDetails = ({ workout }) => {
           {workout.reps}
         </p>
         <p>{workout.createdAt}</p>
-        <span className="delete-btn" onClick={handleClick}>Delete</span>
+        <span className="delete-btn" onClick={handleClick}>
+          Delete
+        </span>
       </div>
     </div>
   );

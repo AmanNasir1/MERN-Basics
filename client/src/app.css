@@ -15,6 +15,7 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .container a {
@@ -52,12 +53,12 @@ body {
     justify-content: space-around;
 }
 
-.create {
+form {
     display: flex;
     flex-direction: column;
 }
 
-.create input {
+form input {
     width: 300px;
     height: 30px;
     padding: 0 10px;
@@ -65,20 +66,21 @@ body {
     border-radius: 4px;
 }
 
-.create h3 {
+form h3 {
     text-align: center;
 }
 
-.create button {
-    width: 120px;
-    height: 40px;
+form button {
+    /* width: 120px; */
+    /* height: 40px; */
     border-radius: 7px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
     background-color: sienna;
     font-weight: bold;
     color: white;
     cursor: pointer;
+    padding: 0.7rem 1.4rem;
 }
 
 .error {
@@ -102,4 +104,56 @@ body {
 
 input.error {
     border: 1px solid rgb(177, 7, 7);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-right: 5rem;
+    justify-content: center;
+
+}
+
+nav a {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0e0e0e;
+    margin-left: 10px;
+}
+
+form.signup,
+form.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    height: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgb(223, 223, 192);
+    border-radius: 4px;
+}
+form.signup input,
+form.login input{
+    margin: 1rem 0;
+
+}
+
+
+form.signup h3,
+form.login h3{
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+nav button{
+    padding: 6px 10px;
+    font-size: 1.2em;
+    background-color: #fff;
+    border: 2px solid sienna;
+    color: sienna;
+    border-radius: 4px;
+    cursor: pointer;
+
 }
